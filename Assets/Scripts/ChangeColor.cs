@@ -22,6 +22,7 @@ public class ChangeColor : MonoBehaviour
                 var t = currentTime / _time;
                 _spawn._cubes[i].GetComponent<SpriteRenderer>().color = Color.Lerp(color, newColor, t);
                 currentTime += Time.deltaTime;
+                yield return null;
             }
 
             currentTime = 0;
