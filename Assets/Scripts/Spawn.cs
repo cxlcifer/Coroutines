@@ -15,10 +15,6 @@ public class Spawn : MonoBehaviour
         StartCoroutine(SpawnCubes());
     }
     
-    void Update()
-    {
-    }
-
     private IEnumerator SpawnCubes()
     {
         var position = _startPosition.position;
