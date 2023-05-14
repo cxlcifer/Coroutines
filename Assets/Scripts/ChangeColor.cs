@@ -4,14 +4,13 @@ using UnityEngine;
 public class ChangeColor : MonoBehaviour
 {
     private Spawn _spawn;
-    public Color newColor;
     [SerializeField] private float _time;
     void Awake()
     {
         _spawn = GetComponent<Spawn>();
     }
 
-    public IEnumerator EditColor()
+    public IEnumerator EditColor(Color newColor)
     {
         for (int i = 0; i < _spawn._cubes.Count; i++)
         {
@@ -32,7 +31,7 @@ public class ChangeColor : MonoBehaviour
 
     public void GenerateColor()
     {
-        newColor = Random.ColorHSV();
-        StartCoroutine(EditColor());
+        var color = Random.ColorHSV();
+        StartCoroutine(EditColor(color));
     }
 }
